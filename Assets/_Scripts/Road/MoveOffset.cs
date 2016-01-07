@@ -4,9 +4,7 @@ using System.Collections;
 public class MoveOffset : MonoBehaviour {
 
     public Renderer rend;
-
-    public float _scrollSpeed;
-
+    private float offset;
     void Start()
     {
         rend = GetComponent<Renderer>();
@@ -14,8 +12,11 @@ public class MoveOffset : MonoBehaviour {
 
     void Update()
     {
-        float offset = _scrollSpeed * Time.time;
-        rend.material.SetTextureOffset("_MainTex", new Vector2(0, offset));
+        if (GameController.Instance._isPlaying)
+        {
+            offset = GameController.Instance._scrollBackGround * Time.time;
+            rend.material.SetTextureOffset("_MainTex", new Vector2(0, offset));
+        }
     }
 
 
