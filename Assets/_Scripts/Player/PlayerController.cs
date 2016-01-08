@@ -56,6 +56,13 @@ public class PlayerController : MonoBehaviour {
         {
             GameController.Instance.OnGameOver();
         }
+        else if (other.gameObject.tag == Tags.Coin)
+        {
+            Debug.Log("Coin");
+            Destroy(other.gameObject);
+        }
+
+        
     }
 
 }

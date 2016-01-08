@@ -13,13 +13,14 @@ public class GameController : MonoBehaviour
 
     public bool _isPlaying;
 
+    public float _maxSpeed;
+
     public float _scrollBackGround;
     public float _maxPosition;
     public float _speedMoveBarrier;
 
 
     //test
-
     public Vector3 leftRay;
     public Vector3 rightRay;
 
@@ -39,7 +40,8 @@ public class GameController : MonoBehaviour
         if (_isPlaying)
         {
             //do somethings when game is playing
-            _speedMoveBarrier += Time.deltaTime * 0.1f;
+            if (_speedMoveBarrier < _maxSpeed)
+                _speedMoveBarrier += Time.deltaTime * 0.1f;
         }
 
     }

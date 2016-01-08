@@ -5,7 +5,7 @@ public class DestroyAll : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == Tags.Barrier)
+        if (other !=null)
         {
             Destroy(other.gameObject);
         }
